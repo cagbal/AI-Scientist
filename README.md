@@ -174,7 +174,7 @@ cd templates/grokking && python experiment.py --out_dir run_0 && python plot.py
 ```bash
 conda activate ai_scientist
 # Run the paper generation.
-python launch_scientist.py --model "gpt-4o-2024-05-13" --experiment nanoGPT_lite --num-ideas 2
+python launch_scientist.py --model "gpt-4o-mini" --experiment nanoGPT_lite --num-ideas 2
 python launch_scientist.py --model "claude-3-5-sonnet-20240620" --experiment nanoGPT_lite --num-ideas 2
 ```
 
@@ -185,7 +185,7 @@ import openai
 from ai_scientist.perform_review import load_paper, perform_review
 
 client = openai.OpenAI()
-model = "gpt-4o-2024-05-13"
+model = "gpt-4o-mini"
 
 # Load paper from pdf file (raw text)
 paper_txt = load_paper("report.pdf")
@@ -281,7 +281,7 @@ You can use this image like this:
 ```bash
 # Endpoint Script
 docker run -e OPENAI_API_KEY=$OPENAI_API_KEY <AI_SCIENTIST_IMAGE> \
-       --model “gpt-4o-2024-05-13” \
+       --model “gpt-4o-mini” \
        --experiment 2d_diffusion \
        --num-ideas 1
 ```
